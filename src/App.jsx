@@ -1,6 +1,6 @@
 // src/App.jsx
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const App = () => {
 
@@ -81,21 +81,32 @@ const App = () => {
     ]
   );
 
+
+  const moneyUpdate = useEffect(() => {
+    console.log(`Current money: ${money}`)
+  }, [money])
+
+  const teamUpdate = useEffect(() => {
+    console.log(team)
+  }, [team])
+
   const handleAddFighter = (zombieFighter) => {
     const economy = money - zombieFighter.price
     setMoney(economy)
     setTeam([...team, zombieFighter])
-    console.log(team)
-    console.log(`Current money: ${money}`)
+    teamUpdate
+    moneyUpdate
     //the team and money state arent accurate but they do update
   }
+
+
 
 
   return (
   <>   
   <p>Current gold count: {money}</p>
 
-
+{/*  */}
     <ul>
       <li>
         {zombieFighters.map((zombieFighter) => 
