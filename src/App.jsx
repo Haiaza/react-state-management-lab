@@ -88,9 +88,11 @@ const App = () => {
 
 
   return (
+  <>   
+  <p>Current gold count: {money}</p>
+
+
     <ul>
-
-
       <li>
         {zombieFighters.map((zombieFighter) => 
         <>
@@ -103,6 +105,7 @@ const App = () => {
         )}
       </li>
     </ul>
+    </>
   );
 }
 
