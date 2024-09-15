@@ -81,9 +81,13 @@ const App = () => {
     ]
   );
 
-  const handleTeamAddition = (zombieFighter) => {
+  const handleAddFighter = (zombieFighter) => {
+    const economy = money - zombieFighter.price
+    setMoney(economy)
     setTeam([...team, zombieFighter])
     console.log(team)
+    console.log(`Current money: ${money}`)
+    //the team and money state arent accurate but they do update
   }
 
 
@@ -100,7 +104,7 @@ const App = () => {
           <img src={zombieFighter.img} alt="super badass zombie fighter" />
           <p>Stat:<strong>Strength:{zombieFighter.strength}</strong></p>
           <p>Stat:<span>Agility:{zombieFighter.agility}</span></p>
-          <button onClick={() => handleTeamAddition(zombieFighter)}>Add</button>
+          <button onClick={() => handleAddFighter(zombieFighter)}>Add</button>
         </>
         )}
       </li>
