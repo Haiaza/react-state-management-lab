@@ -82,20 +82,26 @@ const App = () => {
   );
 
 
-  const moneyUpdate = useEffect(() => {
+  useEffect(() => {
     console.log(`Current money: ${money}`)
   }, [money])
 
-  const teamUpdate = useEffect(() => {
+  useEffect(() => {
     console.log(team)
   }, [team])
 
   const handleAddFighter = (zombieFighter) => {
     const economy = money - zombieFighter.price
+
+    if (zombieFighter.price > money) {
+      console.log('More gold required')
+      return
+    }
+    
+    console.log('You have enough gold.')
     setMoney(economy)
     setTeam([...team, zombieFighter])
-    teamUpdate
-    moneyUpdate
+    
     //the team and money state arent accurate but they do update
   }
 
