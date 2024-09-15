@@ -79,12 +79,18 @@ const App = () => {
         img: 'https://via.placeholder.com/150/602b9e',
       },
     ]
-    
   );
+
+  const handleTeamAddition = (zombieFighter) => {
+    setTeam([...team, zombieFighter])
+    console.log(team)
+  }
 
 
   return (
     <ul>
+
+
       <li>
         {zombieFighters.map((zombieFighter) => 
         <>
@@ -92,6 +98,7 @@ const App = () => {
           <img src={zombieFighter.img} alt="super badass zombie fighter" />
           <p>Stat:<strong>Strength:{zombieFighter.strength}</strong></p>
           <p>Stat:<span>Agility:{zombieFighter.agility}</span></p>
+          <button onClick={() => handleTeamAddition(zombieFighter)}>Add</button>
         </>
         )}
       </li>
