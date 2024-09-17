@@ -1,10 +1,24 @@
 ul {
   display: flex;
   flex-wrap: nowrap;
+  padding-left: 0;
 }
 
 li {
   list-style: none;
   margin: 10px;
   display: grid;
+}
+
+li img {
+  max-width: 250px;
+}
+
+li.squad{
+  display: flex;
+  gap: 2em;
+}
+
+.smaller {
+  max-width: 120px;
 }
