@@ -14,7 +14,13 @@ li img {
   max-width: 250px;
 }
 
-li.squad{
+.squadContainer {
+display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)) ;
+  grid-template-rows: auto ;
+  gap: 10px;
+}
+div li.squad{
   display: flex;
   gap: 2em;
 }
