@@ -1,6 +1,7 @@
 // src/App.jsx
 
 import { useEffect, useState } from "react";
+import './App.css'
 
 const App = () => {
 
@@ -111,20 +112,24 @@ const App = () => {
   return (
   <>   
   <p>Current gold count: {money}</p>
-
-{/*  */}
+  {team.length === 0 ? <h1>Recruit some Fighters</h1> : null}
+  {team.length > 0 ? team.map((member) => (
+    <>
+    <p>{member.name}</p>
+  </>
+  ))
+  : null
+  }
     <ul>
-      <li>
         {zombieFighters.map((zombieFighter) => 
-        <>
+        <li>
           <h1>{zombieFighter.name}</h1>
           <img src={zombieFighter.img} alt="super badass zombie fighter" />
           <p>Stat:<strong>Strength:{zombieFighter.strength}</strong></p>
           <p>Stat:<span>Agility:{zombieFighter.agility}</span></p>
           <button onClick={() => handleAddFighter(zombieFighter)}>Add</button>
-        </>
+        </li>
         )}
-      </li>
     </ul>
     </>
   );

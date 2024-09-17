@@ -1,9 +1,10 @@
 ul {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 li {
   list-style: none;
   margin: 10px;
+  display: grid;
 }
