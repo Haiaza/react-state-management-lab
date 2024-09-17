@@ -7,6 +7,7 @@ const App = () => {
 
   const [team, setTeam] = useState([]);
   const [money, setMoney] = useState(100);
+  const [totalStr, setTotalStr] = useState(0)
   const [zombieFighters, setZombieFighters] = useState(
     [
       {
