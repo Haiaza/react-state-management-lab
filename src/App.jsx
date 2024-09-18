@@ -8,6 +8,7 @@ const App = () => {
   const [team, setTeam] = useState([]);
   const [money, setMoney] = useState(100);
   const [totalStr, setTotalStr] = useState(0)
+  const [totalAgi, setTotalAgi] = useState(0)
   const [zombieFighters, setZombieFighters] = useState(
     [
       {
@@ -82,13 +83,15 @@ const App = () => {
       },
     ]
   );
-
+//Helper functions
   const calculateTotalStr = () => {
     return team.reduce((acc, zombieFighter) => 
       acc + zombieFighter.strength, 0
     )
   }
 
+
+// tracking fx
   useEffect(() => {
     console.log(`Current money: ${money}`)
   }, [money])
@@ -98,6 +101,7 @@ const App = () => {
     setTotalStr(newTotalStr)
   }, [team])
 
+// handler function
   const handleAddFighter = (zombieFighter) => {
     const economy = money - zombieFighter.price
 
@@ -110,7 +114,6 @@ const App = () => {
     setMoney(economy)
     setTeam([...team, zombieFighter])
     
-    //the team and money state arent accurate but they do update
   }
 
 
