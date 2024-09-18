@@ -123,6 +123,7 @@ const App = () => {
   <>   
   <p>Current gold count: {money}</p>
   <p>Total Strength: {totalStr}</p>
+  <p>Total Strength: {totalAgi}</p>
   {team.length === 0 ? <h1>Recruit some Fighters</h1> : null}
   {team.length > 0 ? team.map((member) => (
     <div className="squa">
