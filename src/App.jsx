@@ -90,6 +90,12 @@ const App = () => {
     )
   }
 
+  const calculateTotalAgi = () => {
+    return team.reduce((acc, zombieFighter) => 
+      acc + zombieFighter.agility, 0
+    )
+  }
+
 
 // tracking fx
   useEffect(() => {
@@ -99,6 +105,11 @@ const App = () => {
   useEffect(() => {
     const newTotalStr = calculateTotalStr()
     setTotalStr(newTotalStr)
+  }, [team])
+
+  useEffect(() => {
+    const newTotalAgi = calculateTotalAgi()
+    setTotalAgi(newTotalAgi)
   }, [team])
 
 // handler function
@@ -123,7 +134,7 @@ const App = () => {
   <>   
   <p>Current gold count: {money}</p>
   <p>Total Strength: {totalStr}</p>
-  <p>Total Strength: {totalAgi}</p>
+  <p>Total Agility: {totalAgi}</p>
   {team.length === 0 ? <h1>Recruit some Fighters</h1> : null}
   {team.length > 0 ? team.map((member) => (
     <div className="squa">
