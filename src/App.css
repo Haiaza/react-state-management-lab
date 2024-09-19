@@ -1,6 +1,7 @@
 ul {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  max-width: 75%;
   padding-left: 0;
 }
 
@@ -21,8 +22,8 @@ p {
 .squadContainer {
   display: flex;
   flex-wrap: wrap;
-  max-width: 50%;
-  gap: 10px;
+  max-width: 75%;
+  gap: 5px;
 }
 div li.squad{
   display: flex;
