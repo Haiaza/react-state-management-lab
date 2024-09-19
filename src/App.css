@@ -14,17 +14,21 @@ li img {
   max-width: 250px;
 }
 
+p {
+  margin: 0;
+}
+
 .squadContainer {
-display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)) ;
-  grid-template-rows: auto ;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 50%;
   gap: 10px;
 }
 div li.squad{
   display: flex;
-  gap: 2em;
+  gap: 1em;
 }
 
 .smaller {
-  max-width: 120px;
+  max-width: 60px;
 }
